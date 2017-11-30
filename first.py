@@ -1,29 +1,29 @@
+import random
 number =23
 running = True
 current_points=0
 tries_remaining=100;
-
-while running:
+c=1
+while running & (c==1):
     guess=int(raw_input("enter a number to guess"))
     if guess==number:
         print "Congratulations You have guessed it right "
-        print "your Score is now increased to "+current_points++
-        number=Math.rand(1,7000)
-        tries_remaining--
-        c=raw_input("do u want to continue playing /n 1--yes /n 2--no")
-        if c==1:
-            continue
-        else:
+        current_points=current_points+1;
+        print "Your Score is now increased to ->", current_points
+        number=random.randint(1,100)
+        c=raw_input("do u want to continue playing \n 1--yes /n 2--no")
+        if c==2:
             break;
 
 
-    else if guess<number:
+
+    elif guess<number:
         print "the secret number is more then what u have guessed"
-        tries_remaining--
-        print tries remaining + tries_remaining
+        tries_remaining=tries_remaining-1
+        print "tries remaining -> ", tries_remaining
 
 
-    else if guess>number:
+    elif guess>number:
         print "the secret number is less then what u have guessed"
-        tries_remaining--
-        print tries remaining + tries_remaining
+        tries_remaining=tries_remaining-1
+        print "tries remaining ->", tries_remaining
